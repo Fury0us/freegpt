@@ -8,3 +8,5 @@ cd freegpt
 sudo bash freegpt.sh
 # deps
 no dependencies yet
+## Update 12/27/23
+Added non-proxy functionality so its more compatible
