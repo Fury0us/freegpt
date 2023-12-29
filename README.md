@@ -10,3 +10,5 @@ sudo bash freegpt.sh
 no dependencies yet
 ## Update 12/27/23
 Added non-proxy functionality so its more compatible
+## update 12/28/23
+added a graphic art and a cleaner UI
