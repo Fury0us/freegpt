@@ -1,10 +1,21 @@
 #!/bin/bash
+asci_logo() {
+echo $'\e[1;36m'
+cat << EOF
+
+   █████████  ███████████  ███████████
+  ███░░░░░███░░███░░░░░███░█░░░███░░░█
+ ███     ░░░  ░███    ░███░   ░███  ░ 
+░███          ░██████████     ░███    
+░███    █████ ░███░░░░░░      ░███    
+░░███  ░░███  ░███            ░███    
+ ░░█████████  █████           █████   
+  ░░░░░░░░░  ░░░░░           ░░░░░    
+EOF
+echo $'\e[0m'
+}
 proxygpt() {
-echo -en '\n'
-echo $'\e[1;36m-------------------\e[0m'
-echo $'\e[1;36m' && figlet GPT && echo $'\e[0m'
-echo $'\e[1;36m-------------------\e[0m'
-echo -en '\n'
+asci_logo
 read -p $'\e[36mStart Gpt Session?(yes/no): \e[0m' sgpts
 echo -en '\n'
 read -p $'\e[36mUsername?: \e[0m' user
@@ -19,11 +30,7 @@ else
 fi
 }
 noproxy() {
-echo -en '\n'
-echo $'\e[1;36m-------------------\e[0m'
-echo $'\e[1;36m' && figlet GPT && echo $'\e[0m'
-echo $'\e[1;36m-------------------\e[0m'
-echo -en '\n'
+asci_logo
 read -p $'\e[1;36mStart Gpt Session?: \e[0m' npgt
 echo -en '\n'
 read -p $'\e[1;36mBrowser?: \e[0m' br
@@ -37,13 +44,10 @@ fi
 }
 mainmenu() {
 COLUMNS=12
-echo -en '\n'
-echo $'\e[1;36m-------------------\e[0m'
-echo $'\e[1;36m' && figlet GPT && echo $'\e[0m'
-echo $'\e[1;36m-------------------\e[0m'
-echo -en '\n'
+asci_logo
 PS3=("#main:")
 main=("proxy" "no proxy" "Exit")
+echo $'\e[1;31m'
 select m in "${main[@]}"; do
 case $m in
 "proxy")
@@ -57,5 +61,6 @@ exit
 ;;
 esac
 done
+echo $'\e[0m'
 }
 mainmenu
